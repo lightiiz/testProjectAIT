@@ -10,17 +10,21 @@
             width: 46%;
             height: 124px;
         }
+
         .auto-style2 {
             width: 368px;
         }
+
         .auto-style3 {
             width: 368px;
             height: 56px;
         }
+
         .auto-style4 {
             height: 56px;
             width: 299px;
         }
+
         .auto-style5 {
             width: 299px;
         }

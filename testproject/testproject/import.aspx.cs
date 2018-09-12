@@ -17,7 +17,7 @@ using System.Data.SqlTypes;
 
 namespace testproject
 {
-    [System.Runtime.InteropServices.Guid("EAEE7DC3-30CD-4401-BCD9-231D46149DE6")]
+    
     public partial class import : System.Web.UI.Page
     {
        
@@ -28,7 +28,7 @@ namespace testproject
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            
+
             String Ticket_Number;
             DateTime Create_Date;
             DateTime Lastresponse;
@@ -42,7 +42,7 @@ namespace testproject
             String Help_Topic;
             String Source;
             String Current_Status;
-            String SLA_Period ;
+            String SLA_Period;
             DateTime Last_Updated;
             DateTime? Due_Date = null;
             float Overdue;
@@ -94,9 +94,9 @@ namespace testproject
             mycon.Open();
             OleDbCommand cmd = new OleDbCommand("select * from [Sheet1$]", mycon);
             OleDbDataReader dr = cmd.ExecuteReader();
-            while (dr.Read()) 
+            while (dr.Read())
             {
-             
+
                 // Response.Write("<br/>"+dr[0].ToString());
                 //Roll_No = Convert.ToInt32(dr[0].ToString());
                 Ticket_Number = dr[0].ToString();
@@ -119,7 +119,7 @@ namespace testproject
                 Help_Topic = dr[10].ToString();
                 Source = dr[11].ToString();
                 Current_Status = dr[12].ToString();
-                SLA_Period = dr[13].ToString(); 
+                SLA_Period = dr[13].ToString();
                 Last_Updated = Convert.ToDateTime(dr[14].ToString());
                 if (string.IsNullOrEmpty(dr[15].ToString()))
                 {
@@ -144,7 +144,7 @@ namespace testproject
                 จังหวัด = dr[28].ToString();
                 SLA = dr[29].ToString();
                 เหตุขัดข้อง = dr[30].ToString();
-                เหตุขัดข้อง_อื่นๆ = dr[31].ToString();           
+                เหตุขัดข้อง_อื่นๆ = dr[31].ToString();
                 if (string.IsNullOrEmpty(dr[32].ToString()))
                 {
                     Link_Down = null;
@@ -161,10 +161,10 @@ namespace testproject
                 }
                 else
                 {
-                     
+
                     Link_Down_Time = Convert.ToDateTime(dr[33].ToString());
                 }
-               
+
                 //Link_Down = Convert.ToDateTime(dr[32].ToString());
                 //Link_Down_Time = Convert.ToDateTime(dr[33].ToString());
                 Close_Case_by = dr[34].ToString();
@@ -174,29 +174,29 @@ namespace testproject
                 เบอร์ติดต่อช่าง = dr[38].ToString();
                 Appointed_time = dr[39].ToString();
                 สรุปสาเหตุ_วิธีแก้ปัญหา = dr[40].ToString();
-                OFC_ขาดเนื่องจากสาเหตุ = dr[41].ToString();
-                วิเคราะห์_Customer = dr[42].ToString();
-                if (string.IsNullOrEmpty(dr[43].ToString()))
+                OFC_ขาดเนื่องจากสาเหตุ = dr[45].ToString();
+                วิเคราะห์_Customer = dr[46].ToString();
+                if (string.IsNullOrEmpty(dr[41].ToString()))
                 {
                     Link_Up = null;
                 }
                 else
                 {
 
-                    Link_Up = Convert.ToDateTime(dr[43].ToString());
+                    Link_Up = Convert.ToDateTime(dr[41].ToString());
                 }
-                if (string.IsNullOrEmpty(dr[44].ToString()))
+                if (string.IsNullOrEmpty(dr[42].ToString()))
                 {
                     Link_Up_Time = null;
                 }
                 else
                 {
 
-                    Link_Up_Time = Convert.ToDateTime(dr[44].ToString());
+                    Link_Up_Time = Convert.ToDateTime(dr[42].ToString());
                 }
 
-                Root_Cause = dr[45].ToString();
-                Root_Cause_Other = dr[46].ToString();
+                Root_Cause = dr[43].ToString();
+                Root_Cause_Other = dr[44].ToString();
                 ปัญหาเกิดที่ = dr[47].ToString();
                 Releated_Hardware = dr[48].ToString();
                 Releated_Hardware_Other = dr[49].ToString();
@@ -219,21 +219,21 @@ namespace testproject
         private void savedata(String Ticket_Number1, DateTime Create_Date1, DateTime Lastresponse1, DateTime? Closed_Date1, String Subject1, String From1, String From_Email1, String Priority1,
             float priority_id1, String Department1, String Help_Topic1, String Source1, String Current_Status1, String SLA_Period1, DateTime Last_Updated1, DateTime? Due_Date1, float Overdue1
             , float Answered1, String Assigned_To1, String Agent_Assigned1, String Team_Assigned1, String Ticket_Source_by1, String Ticket_Source_from1, String Circuit_ID1, String Project_Code1
-            ,String AIT_Ticket_ID1, String DGA_Ticket_ID1, String SCOM_Ticket_ID1, String จังหวัด1, String SLA1, String เหตุขัดข้อง1, String เหตุขัดข้อง_อื่นๆ1, DateTime? Link_Down1, DateTime? Link_Down_Time1
-            ,String Close_Case_by1, String Forward_Case_To1, String ช่างที่ดำเนินการแก้ไข1, String ชื่อ_นามสกุล_ช่าง1, String เบอร์ติดต่อช่าง1, String Appointed_time1, String สรุปสาเหตุ_วิธีแก้ปัญหา1, String OFC_ขาดเนื่องจากสาเหตุ1
-            ,String วิเคราะห์_Customer1, DateTime? Link_Up1, DateTime? Link_Up_Time1, String Root_Cause1, String Root_Cause_Other1, String ปัญหาเกิดที่1, String Releated_Hardware1, String Releated_Hardware_Other1
-            ,String SN_ตัวเสีย1, String SN_ตัวใหม่1, String เอกสารใบเลื่อน1, String ใบเลื่อนโดย1, String เจ้าหน้าที่ปิดเคส_Netka1, String เจ้าหน้าที่ปิดเคส_Netka_Other1 )
+            , String AIT_Ticket_ID1, String DGA_Ticket_ID1, String SCOM_Ticket_ID1, String จังหวัด1, String SLA1, String เหตุขัดข้อง1, String เหตุขัดข้อง_อื่นๆ1, DateTime? Link_Down1, DateTime? Link_Down_Time1
+            , String Close_Case_by1, String Forward_Case_To1, String ช่างที่ดำเนินการแก้ไข1, String ชื่อ_นามสกุล_ช่าง1, String เบอร์ติดต่อช่าง1, String Appointed_time1, String สรุปสาเหตุ_วิธีแก้ปัญหา1, String OFC_ขาดเนื่องจากสาเหตุ1
+            , String วิเคราะห์_Customer1, DateTime? Link_Up1, DateTime? Link_Up_Time1, String Root_Cause1, String Root_Cause_Other1, String ปัญหาเกิดที่1, String Releated_Hardware1, String Releated_Hardware_Other1
+            , String SN_ตัวเสีย1, String SN_ตัวใหม่1, String เอกสารใบเลื่อน1, String ใบเลื่อนโดย1, String เจ้าหน้าที่ปิดเคส_Netka1, String เจ้าหน้าที่ปิดเคส_Netka_Other1)
         {
-            String query = "insert into Ostickets2([Ticket Number],[Create Date],[Lastresponse],[Subject],[From],[From Email],[Priority],[priority_id],[Department],[Help Topic],[Source],[Current Status],[SLA Period]" +
+            String query = "insert into Ostickets1([Ticket Number],[Create Date],[Lastresponse],[Subject],[From],[From Email],[Priority],[priority_id],[Department],[Help Topic],[Source],[Current Status],[SLA Period]" +
                 ",[Last Updated],[Overdue],[Answered],[Assigned To],[Agent Assigned],[Team Assigned],[Ticket Source by],[Ticket Source from],[Circuit ID],[Project Code],[AIT Ticket ID],[DGA Ticket ID],[SCOM Ticket ID]" +
                 ",[จังหวัด],[SLA],[เหตุขัดข้อง],[เหตุขัดข้อง (อื่นๆ)],[Close Case by],[Forward Case To],[ช่างที่ดำเนินการแก้ไข],[ชื่อ - นามสกุล ช่าง],[เบอร์ติดต่อช่าง],[Appointed time],[สรุปสาเหตุ # วิธีแก้ปัญหา],[OFC ขาดเนื่องจากสาเหตุ]" +
                 ",[วิเคราะห์ Customer],[Root Cause],[Root Cause (Other)],[ปัญหาเกิดที่],[Releated Hardware],[Releated Hardware (Other)],[S/N (ตัวเสีย)],[S/N (ตัวใหม่)],[เอกสารใบเลื่อน],[ใบเลื่อนโดย],[เจ้าหน้าที่ปิดเคส Netka],[เจ้าหน้าที่ปิดเคส Netka (Other)]) " +
                 "values('" + Ticket_Number1 + "',convert(datetime, '" + Create_Date1 + "', 103),convert(datetime, '" + Lastresponse1 + "', 103),'" + Subject1 + "','" + From1 + "','" + From_Email1 + "','" + Priority1 + "','" + priority_id1 + "','" + Department1 +
-                "','" + Help_Topic1 + "','" + Source1 + "','" + Current_Status1 + "','"+ SLA_Period1 +"',convert(datetime, '" + Last_Updated1 + "', 103),'" + Overdue1 + "','" + Answered1 + "','" + Assigned_To1 + "','" + Agent_Assigned1 + "','"
-                + Team_Assigned1 + "','" + Ticket_Source_by1 + "','" + Ticket_Source_from1 + "','" + Circuit_ID1 + "','" + Project_Code1 + "','" + AIT_Ticket_ID1 + "','" + DGA_Ticket_ID1 + "','" + SCOM_Ticket_ID1 +"','" + จังหวัด1 + "','"
+                "','" + Help_Topic1 + "','" + Source1 + "','" + Current_Status1 + "','" + SLA_Period1 + "',convert(datetime, '" + Last_Updated1 + "', 103),'" + Overdue1 + "','" + Answered1 + "','" + Assigned_To1 + "','" + Agent_Assigned1 + "','"
+                + Team_Assigned1 + "','" + Ticket_Source_by1 + "','" + Ticket_Source_from1 + "','" + Circuit_ID1 + "','" + Project_Code1 + "','" + AIT_Ticket_ID1 + "','" + DGA_Ticket_ID1 + "','" + SCOM_Ticket_ID1 + "','" + จังหวัด1 + "','"
                 + SLA1 + "','" + เหตุขัดข้อง1 + "','" + เหตุขัดข้อง_อื่นๆ1 + "','" + Close_Case_by1 + "','" + Forward_Case_To1 + "','" + ช่างที่ดำเนินการแก้ไข1 + "','" + ชื่อ_นามสกุล_ช่าง1 + "','" + เบอร์ติดต่อช่าง1 + "','"
-                + Appointed_time1 + "','"+ สรุปสาเหตุ_วิธีแก้ปัญหา1 + "','" + OFC_ขาดเนื่องจากสาเหตุ1 + "','" + วิเคราะห์_Customer1 + "','" + Root_Cause1 + "','" + Root_Cause_Other1 + "','" + ปัญหาเกิดที่1 + "','"
-                + Releated_Hardware1 + "','" + Releated_Hardware_Other1 + "','" + SN_ตัวเสีย1 + "','" + SN_ตัวใหม่1 + "','" + เอกสารใบเลื่อน1 + "','" + ใบเลื่อนโดย1 + "','" + เจ้าหน้าที่ปิดเคส_Netka1 + "','" + เจ้าหน้าที่ปิดเคส_Netka_Other1 + "')"; 
+                + Appointed_time1 + "','" + สรุปสาเหตุ_วิธีแก้ปัญหา1 + "','" + OFC_ขาดเนื่องจากสาเหตุ1 + "','" + วิเคราะห์_Customer1 + "','" + Root_Cause1 + "','" + Root_Cause_Other1 + "','" + ปัญหาเกิดที่1 + "','"
+                + Releated_Hardware1 + "','" + Releated_Hardware_Other1 + "','" + SN_ตัวเสีย1 + "','" + SN_ตัวใหม่1 + "','" + เอกสารใบเลื่อน1 + "','" + ใบเลื่อนโดย1 + "','" + เจ้าหน้าที่ปิดเคส_Netka1 + "','" + เจ้าหน้าที่ปิดเคส_Netka_Other1 + "')";
             //String mycon = "Data Source=localhost\sqlexpress;Initial Catalog=dbGIN;Integrated Security=True";
             String mycon = ConfigurationManager.ConnectionStrings["dbGINConnectionString"].ConnectionString;
             SqlConnection con = new SqlConnection(mycon);
@@ -246,7 +246,7 @@ namespace testproject
 
             if (Closed_Date1 != null)
             {
-                String queryclosedate = "update Ostickets2 set [Closed Date] = convert(datetime,'" + Closed_Date1 + "',103) where  [Ticket Number] = ('" + Ticket_Number1 + "') ";
+                String queryclosedate = "update Ostickets1 set [Closed Date] = convert(datetime,'" + Closed_Date1 + "',103) where  [Ticket Number] = ('" + Ticket_Number1 + "') ";
                 mycon = ConfigurationManager.ConnectionStrings["dbGINConnectionString"].ConnectionString;
                 con = new SqlConnection(mycon);
                 con.Open();
@@ -259,7 +259,7 @@ namespace testproject
 
             if (Due_Date1 != null)
             {
-                String queryduedate = "update Ostickets2 set [Due Date] = convert(datetime,'" + Due_Date1 + "',103) where  [Ticket Number] = ('" + Ticket_Number1 + "') ";
+                String queryduedate = "update Ostickets1 set [Due Date] = convert(datetime,'" + Due_Date1 + "',103) where  [Ticket Number] = ('" + Ticket_Number1 + "') ";
 
                 //String mycon = "Data Source=localhost\sqlexpress;Initial Catalog=dbGIN;Integrated Security=True";
                 mycon = ConfigurationManager.ConnectionStrings["dbGINConnectionString"].ConnectionString;
@@ -270,10 +270,10 @@ namespace testproject
                 cmd.Connection = con;
                 cmd.ExecuteNonQuery();
                 con.Close();
-            }          
+            }
             if (Link_Down1 != null)
             {
-                String querylinkdown = "update Ostickets2 set [Link Down] = convert(datetime, '" + Link_Down1 + "', 103) where  [Ticket Number] = ('" + Ticket_Number1 + "') ";
+                String querylinkdown = "update Ostickets1 set [Link Down] = convert(datetime, '" + Link_Down1 + "', 103) where  [Ticket Number] = ('" + Ticket_Number1 + "') ";
 
                 //String mycon = "Data Source=localhost\sqlexpress;Initial Catalog=dbGIN;Integrated Security=True";
                 mycon = ConfigurationManager.ConnectionStrings["dbGINConnectionString"].ConnectionString;
@@ -287,7 +287,7 @@ namespace testproject
             }
             if (Link_Up1 != null)
             {
-                String querylinkup = "update Ostickets2 set [Link Up] = convert(datetime, '" + Link_Up1 + "', 103) where  [Ticket Number] = ('" + Ticket_Number1 + "') ";
+                String querylinkup = "update Ostickets1 set [Link Up] = convert(datetime, '" + Link_Up1 + "', 103) where  [Ticket Number] = ('" + Ticket_Number1 + "') ";
                 mycon = ConfigurationManager.ConnectionStrings["dbGINConnectionString"].ConnectionString;
                 con = new SqlConnection(mycon);
                 con.Open();
@@ -299,7 +299,7 @@ namespace testproject
             }
             if (Link_Down_Time1 != null)
             {
-                String querylinkdowntime = "update Ostickets2 set [Link Down (Time)] = convert(datetime, '" + Link_Down_Time1 + "', 103) where  [Ticket Number] = ('" + Ticket_Number1 + "') ";
+                String querylinkdowntime = "update Ostickets1 set [Link Down (Time)] = convert(datetime, '" + Link_Down_Time1 + "', 103) where  [Ticket Number] = ('" + Ticket_Number1 + "') ";
                 mycon = ConfigurationManager.ConnectionStrings["dbGINConnectionString"].ConnectionString;
                 con = new SqlConnection(mycon);
                 con.Open();
@@ -311,7 +311,7 @@ namespace testproject
             }
             if (Link_Up_Time1 != null)
             {
-                String querylinkuptime = "update Ostickets2 set [Link Up (Time)] = convert(datetime, '" + Link_Up_Time1 +"', 103) where  [Ticket Number] = ('" + Ticket_Number1 + "') ";
+                String querylinkuptime = "update Ostickets1 set [Link Up (Time)] = convert(datetime, '" + Link_Up_Time1 + "', 103) where  [Ticket Number] = ('" + Ticket_Number1 + "') ";
                 mycon = ConfigurationManager.ConnectionStrings["dbGINConnectionString"].ConnectionString;
                 con = new SqlConnection(mycon);
                 con.Open();
@@ -324,6 +324,7 @@ namespace testproject
 
 
         }
+
 
     }
 }

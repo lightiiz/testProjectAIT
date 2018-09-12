@@ -70,6 +70,8 @@
   <ItemGroup>
     <Content Include="exportexcel.aspx" />
     <Content Include="import.aspx" />
+    <Content Include="Importnetka.aspx" />
+    <Content Include="netkastring.aspx" />
     <Content Include="Testdate.aspx" />
     <Content Include="teststring.aspx" />
     <Content Include="Web.config" />
@@ -90,6 +92,20 @@
     </Compile>
     <Compile Include="import.aspx.designer.cs">
       <DependentUpon>import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Importnetka.aspx.cs">
+      <DependentUpon>Importnetka.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Importnetka.aspx.designer.cs">
+      <DependentUpon>Importnetka.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="netkastring.aspx.cs">
+      <DependentUpon>netkastring.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="netkastring.aspx.designer.cs">
+      <DependentUpon>netkastring.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testdate.aspx.cs">
